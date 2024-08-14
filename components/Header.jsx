@@ -49,6 +49,8 @@ const Header = () => {
           </button>
         </div>
       </div>
+      {/* nav */}
+      <AnimatePresence mode="wait">{navActive && <Nav />}</AnimatePresence>
     </header>
   );
 };
