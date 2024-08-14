@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import NavList from "./NavList";
 
 const heightAnimation = {
   initial: {
@@ -22,9 +23,11 @@ const Nav = () => {
       initial="initial"
       animate="open"
       exit="close"
-      className="bg-red-400"
+      className="bg-primary overflow-hidden absolute z-[50] -top-full w-full"
     >
-      nav
+      <div className="container mx-auto h-full flex items-center justify-center">
+        <NavList />
+      </div>
     </motion.nav>
   );
 };
