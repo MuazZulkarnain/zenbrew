@@ -17,8 +17,8 @@ module.exports = {
       xl: "1430px",
     },
     fontFamily: {
-      primary: "var(--font-cormorant_upright)",
-      secondary: "var(--font-open_sans)",
+      primary: "--font-cormorant_upright",
+      secondary: "--font-open_sans",
     },
     extend: {
       colors: {
