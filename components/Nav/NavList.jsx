@@ -14,16 +14,16 @@ const letterAnim = {
     y: "100%",
     opacity: 0,
   },
-  enter: {
+  enter: (i) => ({
     y: 0,
     opacity: 1,
-    transition: { duration: 1, ease: [0.75, 0, 0.23, 1], delay: 0.03 },
-  },
-  exit: {
+    transition: { duration: 1, ease: [0.6, 0, 0.2, 1], delay: i[0] },
+  }),
+  exit: (i) => ({
     y: "100%",
     opacity: 0,
-    transition: { duration: 0.8, ease: [0.75, 0, 0.23, 1], delay: 0.03 },
-  },
+    transition: { duration: 0.8, ease: [0.6, 0, 0.2, 1], delay: i[1] },
+  }),
 };
 
 const getLetter = (name) => {
@@ -35,6 +35,7 @@ const getLetter = (name) => {
         initial="initial"
         animate="enter"
         exit="exit"
+        custom={[index * 0.04, (name.length - index) * 0.01]}
         key={index}
       >
         {letter}
