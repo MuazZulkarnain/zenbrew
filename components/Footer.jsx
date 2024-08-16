@@ -70,8 +70,9 @@ const Footer = () => {
             </Link>
           </ul>
           {/* copyright */}
-          <div className="border-t border-white/10 text-[15px] text-white/70 font-light w-full flex items-center justify-center py-6">
+          <div className="border-t border-white/10 text-[15px] text-white/70 font-light w-full flex flex-col items-center justify-center py-6">
             <p>&copy; Copyright 2024 - Zenbrew. All rights reserved.</p>
+            <p>Developed by Muaz Zulkarnain</p>
           </div>
         </div>
       </div>
