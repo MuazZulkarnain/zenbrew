@@ -1,5 +1,8 @@
 import Separator from "./Separator";
 
+//components
+import MenuItem from "./MenuItem";
+
 const menuItems = [
   {
     imgSrc: "/assets/menu/coffee-1.png",
@@ -57,8 +60,8 @@ const menuItems = [
   },
   {
     imgSrc: "/assets/menu/coffee-5.png",
-    name: "Tongkat Ali Coffee",
-    description: "Coffee with traditional herb",
+    name: "Tongkat Ali",
+    description: "Special coffee with traditional herb",
     price: 4,
   },
 ];
@@ -67,7 +70,7 @@ const Menu = () => {
   return (
     <section className="pt-12 pb-16 xl:pt-16 xl:pb-36">
       <div className="container mx-auto">
-        <div>
+        <div className="flex flex-col gap-4 mb-12 xl:mb-24">
           <h2 className="h2 text-center">Our Menu</h2>
           <div className="mb-4">
             <Separator bg="accent" />
@@ -78,6 +81,25 @@ const Menu = () => {
             illo! Iste, obcaecati. Quidem fugit repudiandae voluptatem
             praesentium voluptatibus modi eveniet tempora?
           </p>
+        </div>
+        {/* menu & btn */}
+        <div className="flex flex-col items-center gap-12 xl:gap-24">
+          {/* menu grid */}
+          <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-y-8 gap-x-16 place-content-center">
+            {menuItems.map((item, index) => {
+              const { name, description, price, imgSrc } = item;
+              return (
+                <MenuItem
+                  name={name}
+                  description={description}
+                  price={price}
+                  imgSrc={imgSrc}
+                  key={index}
+                />
+              );
+            })}
+          </div>
+          <button className="btn">View full menu</button>
         </div>
       </div>
     </section>
